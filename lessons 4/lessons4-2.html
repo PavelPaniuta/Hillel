@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lessons 4</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        let number = prompt('Enter Number!');
-        console.log(typeof number);
-        
-        if (typeof number == NaN) {
-            alert ('Enter only Numbers')
-            console.log(number);
-            
+      let numbEnter = prompt ('Enter Number!');
+
+      let myFunc = (num) => {
+        num = num.toString();
+        let res1 = false;
+        let res2 = true;
+
+        for (let i = 0; i <= num.length-1; i++) {
+          if (num[i] == num[i + 1]) {
+            res1 = true;
+          }
+          if (num[0] != num[i]) {
+            res2 = false;
+          }
         }
         
+        alert (`Are among the numbers the numbers are the same - ${res1},\nAll numbers are the same? - ${res2}`)
+      };
+
+      myFunc(numbEnter);
     </script>
-</body>
+  </body>
 </html>
