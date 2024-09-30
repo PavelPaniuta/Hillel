@@ -7,8 +7,9 @@
 </head>
 <body>  
     <script>
-        let name = prompt('Enter your name!')
-        alert(`Hello, ${name}! How are you?`)
+        let name = prompt('Enter your name!');
+        let firstBig = name[0].toUpperCase(); 
+        alert(`Hello, ${firstBig}${name.slice(1)}! How are you?`)
     </script>
 </body>
 </html>
