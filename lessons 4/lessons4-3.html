@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lessons4</title>
+  </head>
+  <body>
+    <script>
+      let alertNull = "";
+
+      let year = prompt("Ваш вік?");
+
+      if (year === null || year === "") {
+        alertNull = "Шкода, що Ви не захотіли ввести свій вік\n";
+        alert(alertNull);
+      }
+
+      let town = prompt("В якому місті Ви живете?");
+
+      if (town === null || town === "") {
+        alertNull =
+          "Шкода, що Ви не захотіли ввести свіє місто В якому живете\n";
+        alert(alertNull);
+      }
+
+      let sport = prompt("Ваш улюблений вид спорту?");
+
+      if (sport === null || sport === "") {
+        alertNull =
+          "Шкода, що Ви не захотіли ввести свій улюблений вид спорту\n";
+        alert(alertNull);
+      }
+
+      let firstTownBig = town ? town[0].toUpperCase() : "";
+      let townFinish = firstTownBig + town.slice(1);
+
+      let firstsportBig = sport ? sport[0].toUpperCase() : "";
+      let sportFinish = firstsportBig + sport.slice(1);
+
+      let massage = "";
+
+      switch (town.toLowerCase()) {
+        case "київ":
+          massage = "Ви живете у столиці Київ";
+          break;
+        case "вашингтон":
+          massage = "Ви живете у столиці Вашингтон";
+          break;
+        case "лондон":
+          massage = "Ви живете у столиці Лондон";
+          break;
+        default:
+          massage = `Ви живете у місті ${townFinish}`;
+      }
+
+      let massageSport = "";
+
+      switch (sport.toLowerCase()) {
+        case "бокс":
+          massageSport = "Круто! Хочеш стати як Сашко Усик";
+          break;
+        case "футбол":
+          massageSport = "Круто! Хочеш стати як Криштіано Роналдо";
+          break;
+        case "теніс":
+          massageSport = "Круто! Хочеш стати як Новак Джокович";
+          break;
+        default:
+          massageSport = `Ваш улюблений вид спорту ${sportFinish}`;
+      }
+
+      alert(
+        `Ваш вік ${year ? year : "не відомий"}, ${
+          town ? massage : "Місце проживання не відоме"
+        }, ${sport ? massageSport : "Улюбленний вид спорту не відомий"}`
+      );
+    </script>
+  </body>
+</html>
