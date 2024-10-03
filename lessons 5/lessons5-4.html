@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lessons 5</title>
+  </head>
+  <body>
+    <script>
+      //Дано ціле число (ввести через 'prompt'). З'ясувати, чи просто воно (простим називається число, більше 1, що не має інших дільників, крім 1 і себе)
+
+      const n = prompt("Enter Number");
+
+      for (let i = 1; i <= n; i++) {
+        for (let j = 2; j <= i; j++) {
+          if (i % j === 0 && j < i) {
+            break;
+          } else if (j === i) {
+            console.log(i);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
