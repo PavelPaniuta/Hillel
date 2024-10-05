@@ -10,15 +10,30 @@
       //Дано ціле число (ввести через 'prompt'). З'ясувати, чи просто воно (простим називається число, більше 1, що не має інших дільників, крім 1 і себе)
 
       const n = prompt("Enter Number");
+      let res = "";
+      let flag = 0;
 
-      for (let i = 1; i <= n; i++) {
-        for (let j = 2; j <= i; j++) {
-          if (i % j === 0 && j < i) {
-            break;
-          } else if (j === i) {
-            console.log(i);
+      //Если число ровно 1
+      if (n === "1") {
+        res = "Должно быть больше 1";
+        console.log(res);
+      }
+
+      //Если число ровно 2 или 3
+      else if (n === "2" || n === "3") {
+        res = "Простое число";
+        console.log("Простое число");
+      } else {
+        for (var x = 2; x < n; x++) {
+          if (n % x === 0) {
+            flag = flag + 1;
           }
         }
+        console.log(
+          flag > 0
+            ? console.log("Составное число")
+            : console.log("Простое число")
+        );
       }
     </script>
   </body>
