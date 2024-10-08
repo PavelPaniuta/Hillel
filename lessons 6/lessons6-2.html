@@ -9,16 +9,18 @@
     <script>
         //Дано масив з елементами різних типів. Створити функцію яка вираховує середнє арифметичне лише числових елементів даного масиву.
 
-        let massType = [true, 2, 4, 'text', null, undefined, 10];
+        let massType = [true, 5, 5, 'text', null, undefined, 5, 20];
 
         const myFunc = (arg) => {
             let res = 0;
+            flag = 0;
             for(let i = 0; i <= arg.length-1; i++){
                 if(Number.isInteger(arg[i])) {
+                    flag +=1;
                     res += arg[i];
                 }
             }
-            return res;
+            return res/flag;
         }
 
         let result = myFunc (massType);
