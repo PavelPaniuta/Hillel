@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lessons 6</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        //Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 
-        //'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач.
+      //Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом.
+      //'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач.
+      let textPrompt = prompt("Введите текст").split("");
+      let simbolPrompt = prompt(
+        "Введите букевы которые нужно удалить из текста"
+      ).split("");
+
+      const delSimbol = (text, simbol) => {
+        for (let i = 0; i <= simbol.length - 1; i++) {
+          text = text.filter((e) => e != simbol[i]);
+        }
+        return text.join("");
+      };
+      let result = delSimbol(textPrompt, simbolPrompt);
+      console.log(result);
     </script>
-    
-</body>
+  </body>
 </html>
