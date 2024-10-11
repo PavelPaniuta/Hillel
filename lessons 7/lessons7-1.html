@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lessons 7</title>
+  </head>
+  <body>
+    <script>
+      // Написати функцію, яка приймає 1 параметр. Та скадае значення з тим, що передали перший раз і т. д. Все це із замиканнями, наприклад:
+
+      const funcSum = (a) => {
+        let sum = 0;
+        return function (b) {
+          return (sum = sum + b);
+        };
+      };
+      let newNum = funcSum(0);
+
+      console.log(newNum(4)); // 4
+      console.log(newNum(6)); // 10
+      console.log(newNum(10)); // 20
+      console.log(newNum(7)); // 27
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lessons 7</title>
+  </head>
+  <body>
+    <script>
+      // Створити функцію для розрахунку добутку двох чисел, що викликається так: name(5)(2).
+      // Функція повинна повертати результат (у середині функції не має бути консоль лога!)
+
+      function curryingFunc(x) {
+        return function (y) {
+          return x * y;
+        };
+      }
+      console.log(curryingFunc(5)(2));
+    </script>
+  </body>
+</html>
