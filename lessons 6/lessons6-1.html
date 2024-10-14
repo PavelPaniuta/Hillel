@@ -19,7 +19,7 @@
         simbol = simbol.split("");
 
         for (let i = 0; i <= simbol.length - 1; i++) {
-          text = text.filter((e) => e != simbol[i]);
+          text = text.filter((element) => element != simbol[i]);
         }
         return text.join("");
       };
