@@ -9,19 +9,22 @@
     <script>
       //Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом.
       //'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач.
-      let textPrompt = prompt("Введите текст").split("");
+      let textPrompt = prompt("Введите текст");
       let simbolPrompt = prompt(
         "Введите букевы которые нужно удалить из текста"
-      ).split("");
+      );
 
       const delSimbol = (text, simbol) => {
+        text = text.split("");
+        simbol = simbol.split("");
+
         for (let i = 0; i <= simbol.length - 1; i++) {
           text = text.filter((e) => e != simbol[i]);
         }
         return text.join("");
       };
-      let result = delSimbol(textPrompt, simbolPrompt);
-      console.log(result);
+
+      console.log(delSimbol(textPrompt, simbolPrompt));
     </script>
   </body>
 </html>
