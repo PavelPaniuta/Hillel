@@ -9,31 +9,31 @@
     <script>
       let company = {
         sales: [
-          { name: "Li", solary: 1 },
-          { name: "Jone", solary: 1 },
+          { name: "Li", solary: 10 },
+          { name: "Jone", solary: 10 },
         ],
         development: {
           web: [
-            { name: "Lola", solary: 1 },
-            { name: "Jone", solary: 1 },
+            { name: "Lola", solary: 10 },
+            { name: "Jone", solary: 10 },
           ],
           internal: {
             internal2: [
-              { name: "Jeke", solary: 1 },
-              { name: "Jin", solary: 1 },
+              { name: "Jeke" },
+              { name: "Jin", solary: 10 },
             ],
           },
         },
         sel: [
-          { name: "Li", solary: 1 },
-          { name: "Jone", solary: 1 },
+          { name: "Li", solary: 10 },
+          { name: "Jone", solary: 10 },
         ],
         QW: [
-          { name: "Li", solary: 1 },
-          { name: "Jone", solary: 1 },
-        ]
+          { name: "Li", solary: 10 },
+          { name: "Jone", solary: 10 },
+        ],
       };
-      
+
       let state = 0;
 
       const searchKey = (object) => {
@@ -41,7 +41,9 @@
         for (let i = 0; i <= massItem.length - 1; i++) {
           if (Array.isArray(object[massItem[i]])) {
             for (let item of object[massItem[i]]) {
+              if (item.solary) {
                 state += item.solary;
+              }
             }
           } else {
             searchKey(object[massItem[i]]);
@@ -52,7 +54,6 @@
       searchKey(company);
 
       console.log(state);
-      
     </script>
   </body>
 </html>
