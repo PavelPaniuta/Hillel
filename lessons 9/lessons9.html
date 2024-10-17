@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lessons 9</title>
+  </head>
+  <body>
+    <script>
+      let company = {
+        sales: [
+          { name: "Li", solary: 1 },
+          { name: "Jone", solary: 1 },
+        ],
+        development: {
+          web: [
+            { name: "Lola", solary: 1 },
+            { name: "Jone", solary: 1 },
+          ],
+          internal: {
+            internal2: [
+              { name: "Jeke", solary: 1 },
+              { name: "Jin", solary: 1 },
+            ],
+          },
+        },
+        sel: [
+          { name: "Li", solary: 1 },
+          { name: "Jone", solary: 1 },
+        ],
+        QW: [
+          { name: "Li", solary: 1 },
+          { name: "Jone", solary: 1 },
+        ]
+      };
+      
+      let state = 0;
+
+      const searchKey = (object) => {
+        let massItem = Object.keys(object);
+        for (let i = 0; i <= massItem.length - 1; i++) {
+          if (Array.isArray(object[massItem[i]])) {
+            for (let item of object[massItem[i]]) {
+                state += item.solary;
+            }
+          } else {
+            searchKey(object[massItem[i]]);
+          }
+        }
+      };
+
+      searchKey(company);
+
+      console.log(state);
+      
+    </script>
+  </body>
+</html>
