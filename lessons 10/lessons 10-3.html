@@ -1,18 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>lessons 10</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        //Створіть об'єкт, який матиме одну властивість з масивом об'єктів. Які представляють контакти у вашій контактній книзі. 
-        //Кожен об'єкт має містити ім'я, номер телефону та адресу електронної пошти. 
-        //Додайте метод для пошуку контакту за ім'ям та метод для додавання нових контактів.
+      //Створіть об'єкт, який матиме одну властивість з масивом об'єктів. Які представляють контакти у вашій контактній книзі.
+      //Кожен об'єкт має містити ім'я, номер телефону та адресу електронної пошти.
+      //Додайте метод для пошуку контакту за ім'ям та метод для додавання нових контактів.
 
+      let myTelephone = {
+        pereson: [
+          { name: "Petro", phone: "095 666 66 66", email: "petro@gmail.com" },
+          { name: "admin", phone: "095 222 2222", email: "admin@gmail.com" },
+          { name: "Ganna", phone: "095 777 7777", email: "Ganna@gmail.com" },
+          { name: "Inna", phone: "095 877 7878", email: "Inna@gmail.com" },
+          { name: "petro", phone: "095 111 1111", email: "Ivan@gmail.com" },
+        ],
         
+        searchFunction(name) {
+          let optiName = name.toLowerCase();
+          let searchItem = [];
+          for (let elem of this.pereson) {
+            if (elem.name.toLowerCase() === optiName) {
+              searchItem.push(elem);
+            }
+          }
+          searchItem.forEach((el) => console.log(el));
+        },
 
+        addNewPerson(name, phone, email) {
+          this.pereson.push({ name: name, phone: phone, email: email });
+          console.log(this.pereson);
+        },
+      };
+
+      myTelephone.searchFunction("peTro");
+      myTelephone.addNewPerson("alina", "095678 95 55", "alina@gmail.com");
     </script>
-</body>
+  </body>
 </html>
