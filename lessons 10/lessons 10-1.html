@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lessons 10</title>
+  </head>
+  <body>
+    <script>
+      //Створіть об'єкт, що містить інформацію про користувача, таку як ім'я, вік, місце проживання тощо.
+      //Створіть метод об'єкту для отримання та відображення цих даних.
+
+      const person = {
+        name: "Petro",
+        year: "1989",
+        city: "Dnipro",
+        sendAllInfo() {
+          console.log(
+            `Name: ${this.name}, Year: ${this.year}, City: ${this.city}`
+          );
+        },
+      };
+
+      person.sendAllInfo();
+      
+    </script>
+  </body>
+</html>
