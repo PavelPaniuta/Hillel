@@ -10,7 +10,7 @@ function createElements() {
 }
 
 function rondom() {
-  let interval = setInterval(() => createElements(), 1000);
+  const interval = setInterval(() => createElements(), 1000);
 
   setTimeout(() => {
     clearInterval(interval);
