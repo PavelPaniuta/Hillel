@@ -1,0 +1,28 @@
+.block{
+    height: 100vh;
+    display: flex;
+    justify-content: center;    
+    text-align: center;
+    align-items:center;
+}
+
+.block__photo{
+    width: 700px;
+    height: 700px;
+    overflow: hidden; 
+    border-radius: 10px;
+}
+
+.block__photo img{
+    width: 100%;
+}
+
+@media (max-width: 426px) { 
+    
+    .block__photo{
+        width: 350px;
+        height: 350px;
+        overflow: hidden; 
+    }
+
+}
