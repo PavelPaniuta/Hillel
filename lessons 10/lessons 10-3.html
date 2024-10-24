@@ -11,7 +11,7 @@
       //Кожен об'єкт має містити ім'я, номер телефону та адресу електронної пошти.
       //Додайте метод для пошуку контакту за ім'ям та метод для додавання нових контактів.
 
-      let myTelephone = {
+      const myTelephone = {
         pereson: [
           { name: "Petro", phone: "095 666 66 66", email: "petro@gmail.com" },
           { name: "admin", phone: "095 222 2222", email: "admin@gmail.com" },
@@ -19,7 +19,7 @@
           { name: "Inna", phone: "095 877 7878", email: "Inna@gmail.com" },
           { name: "petro", phone: "095 111 1111", email: "Ivan@gmail.com" },
         ],
-        
+
         searchFunction(name) {
           let optiName = name.toLowerCase();
           let searchItem = [];
@@ -33,12 +33,14 @@
 
         addNewPerson(name, phone, email) {
           this.pereson.push({ name: name, phone: phone, email: email });
-          console.log(this.pereson);
+          return this.pereson;
         },
       };
 
       myTelephone.searchFunction("peTro");
-      myTelephone.addNewPerson("alina", "095678 95 55", "alina@gmail.com");
+      console.log(
+        myTelephone.addNewPerson("alina", "095678 95 55", "alina@gmail.com")
+      );
     </script>
   </body>
 </html>
