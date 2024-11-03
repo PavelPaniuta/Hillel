@@ -57,3 +57,17 @@
     font-size: 14px;
     color:red;
 }
+
+.none {
+    display: none;
+    margin: -14px 0 10px 10px;
+    font-size: 14px;
+    color:red;
+}
+
+.block {
+    display: block;
+    margin: -14px 0 10px 10px;
+    font-size: 14px;
+    color:red;
+}
