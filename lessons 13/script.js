@@ -7,9 +7,8 @@ const erroName = document.querySelector(".form-group__div__name");
 const erroText = document.querySelector(".form-group__div__text");
 const erroPhone = document.querySelector(".form-group__div__phone");
 const erroEmail = document.querySelector(".form-group__div__emeil");
-
 const allSelectorError = document.querySelectorAll(".form-group__div");
-console.log(allSelectorError);
+
 
 //only letters
 nameUser.addEventListener("keypress", (event) => {
