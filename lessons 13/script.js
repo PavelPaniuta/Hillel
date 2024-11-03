@@ -28,16 +28,11 @@ phoneUser.addEventListener("input", () => {
 
 //function checking the field is filled, error appears
 const erroInfo = (regExp, item, erro) => {
-  let res = 0;
   if (regExp.test(item.value)) {
-    res = res - 1;
     erro.classList.remove("block");
   } else if (!regExp.test(item.value) || item.value.length < 1) {
-    res = res + 1;
     erro.classList.add("block");
   }
-  sendMassage();
-  return res;
 };
 
 nameUser.addEventListener("input", () => {
