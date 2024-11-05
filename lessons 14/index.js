@@ -52,19 +52,15 @@ const changPhoto = (id, buttonPrevOrNextOrPoint) => {
     allPointButton[activeIndexPhoto].classList.remove("activePoint");
   if (buttonPrevOrNextOrPoint === "prev" && id > 0) {
     activeIndexPhoto -= 1;
-    allPhoto[activeIndexPhoto].classList.add("active");
-    allPointButton[activeIndexPhoto].classList.add("activePoint");
   }
   if (buttonPrevOrNextOrPoint === "next" && id < allPhoto.length - 1) {
     activeIndexPhoto += 1;
-    allPhoto[activeIndexPhoto].classList.add("active");
-    allPointButton[activeIndexPhoto].classList.add("activePoint");
   }
   if (buttonPrevOrNextOrPoint === "piont") {
     activeIndexPhoto = id;
-    allPhoto[id].classList.add("active");
-    allPointButton[id].classList.add("activePoint");
   }
+  allPhoto[activeIndexPhoto].classList.add("active");
+  allPointButton[activeIndexPhoto].classList.add("activePoint");
 };
 
 prevButton.addEventListener("click", () => {
