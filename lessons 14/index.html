@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js" defer></script>
+    <title>lessons 14</title>
+</head>
+<body>
+    <div class="slider">
+        <div class="slider__photo">
+            <div class="slider__prev-button">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD3UlEQVR4nO1ZzU8TQRTfgB+JcPKLiMXOlMYDVwLiR+JfYTSaeAL1P0BITG9iwonQeUvDHWONJ8WrN+8qnggkoBEQMPQNRfSy5m0x0tcp3enuFkz6SybZsJ23782893sfOE4TTTQRHnmvNTlVuCoBRwXoV1LpzxL0D6HwNy3/GXDOfwc4moTCgJPxWpzDRrfa6ZKgn0mFXyVoz2YJwC9C6bH0RDHRcMXTE3hOgs4Jhb9sFa8wRPky3Ms5PNsQ5VOg70qlN8MqblgbSdB3YlO8N+cdF0pPVz9JjQJwRmRxSKpiH90S7aHl35i71V96h8/pt1UNUXqK9kSq/IWcd0oqfGv+IH5LKnxEv7GSBzgoQM9XcatZG3kHgk7DpLwA3BWATzrGV9rCyBaAwySrUr5+E8lNmN0GV4g2nYjQrQrXhMJVw224oQRLV98zXO8nok8nYqRyO5dItiG2btclsHOycEYovc6UX41DeWZE+U0ovVkXxRLPs2D9GaXbVEPKxes8JgRoZSWETpknKQpYp0GQCkc4YVhlbL88YFRpwzY9ee8E3WC9BvSU9i+wWBgLtjvvtfLahng+6Me7JoudUun3tM8JAQH4gN3CcqACsFRVlmfYoEmF6JBu6+/eMAZ0jK+0CdC6zBPcrf6aG6ncZZbPBD0xHjdhDCBIhS/2y0sBPnZqoVSz7zMgi0NB/N1UEtT8WA0IFx8yNnoZ5CTnygO42BfE32MxIFu4wrzhY81NvFSulkS4v0exHIYU6PMsHtdrW838mFwkiL/HYUB6wjvJ80E0Bqjt+5SZj6QBMqgLQbFXKFw6ei4ELIgP4F6/01L4Lq4gTkJhwDqIbWn0ZsY7VlF6HCaNSlZIUQ8b6GOGuAhrgASdZzcwbH9tNqUEi4swyvdk19ol6O2gOekfMl4LDZ3K3QEHg354f1xEWswpXAo8zaPSlfnevE2DHbacTpfoc5Hp8NRCQDFhaGhq+19EkJUF5W7CLV60FKJdLoTKBydmpLJ4o+LwFE5aC0pMb502NfXUeDe0qQe9UffclGaVnNtp9BGHESlSnifR0roVSjDNKg1GrNL0IGK3WTN8JxvRUBdnK4TT6EPhiKnYs2MrHDVVtkLp15TlnShAicxkxN5aIM62mlpk19r3eH7RJJOUj2y4WzbkZczEeFpTD0v1C3VSVEnSCdOiZ/obTTf2yoPyDAvlbhPZyZtAs0rOTlEsAfp76IC1mpuCVqaxuL3iuEs8T7TtNBqUHansoKFTHYovU3lgnWFjQcZrocaH5jZUs1PjQZ0dsYvPMPQM+GHv3bBfVR6Ff7M20YTz/+MPrVgMk80jMSEAAAAASUVORK5CYII=" alt="circled-left-2--v1">
+            </div>
+            <div class="slider__next-button">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD9ElEQVR4nO1ZS09TQRS+AR9R3PgkINCZQlywNeAz0R/hK7oF9R+gJIaVYkJcIJ1zadi5wFjjhqj/wJ0bBVdEE3xRVAw9hyro4ppTuminc+kM97Zq0i+ZpKGdM+fMnMd3Dp7XQAMNREcmaE5M5k5IwGEB9EQqeiOBvguFv3gVPgPOFb4DHE5A7rg3EjR5fxvd6kenBLorFX6UQIHLEoAfhKLRnvF8R90V7xnHgxIoLRSuuypeYYgqyPCPpPFAXZRPAl2WipajKm5Y3xJAl2qm+NF0sF0omgq/SUIBOC1SOChVvo9fiffwKryYv9K/8R0+5N+GGqJokvfEqnxbOtgtFT43H4ifEwqv82+c5AEOCKD5ELd65iJvU/BtmJQXgGsC8Fbr2GJLFNkCcIhlVcqnp7G8hNltcJHTphcTulXupFCYNbyGH0mw9OmK4XlnOX16MSOZ/tHFsg2xdXFLAtsncvuFoq+a8tlaKK8ZUf4Sipa3lGI5z2vB+jNOtwlD0sdTekwIIOUkhG9ZL1IcsF6dIBXe1BOGU8Uu0AMtVUbJNlLhg457wS7b3/dmgh0S6K0WC6N2uzNBs85tOM97EVC8xZfs47Z7BOBV7RXeWxHADVZZXmGjFpUSX/6S8OmszZ7WscUWAURlnuCv9FschsOa5dNRlC81oCjvNxcvq30KH5XuTQLeqLppg7OXHJjCwTgNKImrqnEhfLymZaPHFgbgXPlB+b6aGGARFyKVO6b9/nX1wzSqbCoiFtTYvh+A8LhIAh3S4vFrVQP0/M8prZYGyE3iomc82KnXg3/TAIXrnDZjMaDeLiQBP4VRlK25kB7ENrm32qWE+/+LrvRqW9g+nl44B3Hd0ihQ2uSekdOoTqS4h43TgDB/N0ECZbQXqF4AK54tRiqxmb/r6E0t7ZFAq+41aSRo4qGTFmgDXgTY+HtVMqdwwXqax9RV8735KA22jb8b0uc7zRNue7bg5sHQ0FgRsDggKwnlWudEvt1JiFAEuhCeHng1RjKFpysuT+GEs6COqZV9zFM0QVmXpiSWph7oGw8YtiSQZ5WGsj9bCyOSrLxeRDfW+UiCebhkMCLL04OY3WbJcI676+g4MxJs4zFfJQ3ANS56LtnF3LzjsGlML4Bm+GwvDnAhMxlRXG85Z7tMLbhIFfP8uxCONOMyxbB/CS0zaYcS97DMX7iTYibJN8yLP/PfeLpRpAflFRbK3Sa2mzdB+HRBHznGsQRnvBSe8+qBQopVmDKNxd0VxzUJeL8LVvbWRfkyQ/z8YQF0h4dOzoorXGB64Fxha4KRoIkbH57bMGfnxoM7uwJ15gzDnwFfFb8bKrDKf+HfrA004P3/+APAAAzLecOs4AAAAABJRU5ErkJggg==" alt="circled-right-2--v1">
+            </div>
+            <div class="slider__navigatin-button">
+               
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
