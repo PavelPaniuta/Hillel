@@ -38,7 +38,7 @@ allPhoto[activeIndexPhoto].classList.add("active");
 const allPointButton = [
   ...divPointButton.querySelectorAll(".slider__navigatin-button--point"),
 ];
-allPointButton[activeIndexPhoto].classList.add('activePoint');
+allPointButton[activeIndexPhoto].classList.add("activePoint");
 
 const noneButton = () => {
   if (activeIndexPhoto <= 0) {
@@ -55,25 +55,29 @@ const noneButton = () => {
 
 noneButton();
 
-const changPhoto = (id, buttonPrevOrNext) => {
-  if (buttonPrevOrNext === "prev" && id > 0) {
+const changPhoto = (id, buttonPrevOrNextOrPoint) => {
+  if (buttonPrevOrNextOrPoint === "prev" && id > 0) {
     allPhoto[id].classList.remove("active");
+    allPointButton[activeIndexPhoto].classList.remove("activePoint");
     id = id - 1;
     activeIndexPhoto = id;
     allPhoto[id].classList.add("active");
+    allPointButton[id].classList.add("activePoint");
   }
-  if (buttonPrevOrNext === "next" && id < allPhoto.length - 1) {
+  if (buttonPrevOrNextOrPoint === "next" && id < allPhoto.length - 1) {
     allPhoto[id].classList.remove("active");
+    allPointButton[activeIndexPhoto].classList.remove("activePoint");
     id = id + 1;
     activeIndexPhoto = id;
     allPhoto[id].classList.add("active");
+    allPointButton[id].classList.add("activePoint");
   }
-  if (buttonPrevOrNext === "piont") {
+  if (buttonPrevOrNextOrPoint === "piont") {
     allPhoto[activeIndexPhoto].classList.remove("active");
-    allPointButton[activeIndexPhoto].classList.remove("activePoint")
+    allPointButton[activeIndexPhoto].classList.remove("activePoint");
     activeIndexPhoto = id;
     allPhoto[id].classList.add("active");
-    allPointButton[id].classList.add('activePoint');
+    allPointButton[id].classList.add("activePoint");
   }
 };
 
@@ -91,11 +95,35 @@ divPointButton.addEventListener("click", (event) => {
   let ids = 0;
   allPointButton.forEach((element, id) => {
     if (event.target === element) {
-        
       ids = id;
     }
   });
-
   changPhoto(ids, "piont");
   noneButton();
 });
+
+
+//Анимация для текста слайдера 
+// function animateText(textArea) {
+//     let text = textArea.value;
+//     let to = text.length,
+//       from = 0;
+
+//     animate({
+//       duration: 5000,
+//       timing: bounce,
+//       draw: function(progress) {
+//         let result = (to - from) * progress + from;
+//         textArea.value = text.slice(0, Math.ceil(result))
+//       }
+//     });
+//   }
+
+
+//   function bounce(timeFraction) {
+//     for (let a = 0, b = 1; 1; a += b, b /= 2) {
+//       if (timeFraction >= (7 - 4 * a) / 11) {
+//         return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
+//       }
+//     }
+//   }
