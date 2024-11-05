@@ -15,7 +15,7 @@ body {
 }
 
 .slider {
-    background-color:rgb(237, 230, 244);
+    background-color:rgba(237, 230, 244, 0);
     width: 80%;
     height: 400px;
     position: relative
@@ -24,6 +24,7 @@ body {
 .slider__photo{
     height: 100%;
     overflow: hidden;
+    border-radius:25px;
 }
 
 .slider__img {
@@ -71,3 +72,6 @@ body {
     cursor: pointer;
 }
 
+.activePoint{
+    background-color: brown !important;
+}

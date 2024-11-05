@@ -38,6 +38,7 @@ allPhoto[activeIndexPhoto].classList.add("active");
 const allPointButton = [
   ...divPointButton.querySelectorAll(".slider__navigatin-button--point"),
 ];
+allPointButton[activeIndexPhoto].classList.add('activePoint');
 
 const noneButton = () => {
   if (activeIndexPhoto <= 0) {
@@ -69,8 +70,10 @@ const changPhoto = (id, buttonPrevOrNext) => {
   }
   if (buttonPrevOrNext === "piont") {
     allPhoto[activeIndexPhoto].classList.remove("active");
+    allPointButton[activeIndexPhoto].classList.remove("activePoint")
     activeIndexPhoto = id;
     allPhoto[id].classList.add("active");
+    allPointButton[id].classList.add('activePoint');
   }
 };
 
@@ -88,6 +91,7 @@ divPointButton.addEventListener("click", (event) => {
   let ids = 0;
   allPointButton.forEach((element, id) => {
     if (event.target === element) {
+        
       ids = id;
     }
   });
