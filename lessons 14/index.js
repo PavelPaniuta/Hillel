@@ -48,33 +48,26 @@ const hideButtons = () => {
 hideButtons();
 
 const changPhoto = (id, buttonPrevOrNextOrPoint) => {
-  if (buttonPrevOrNextOrPoint === "prev" && id > 0) {
     allPhoto[activeIndexPhoto].classList.remove("active");
     allPointButton[activeIndexPhoto].classList.remove("activePoint");
+  if (buttonPrevOrNextOrPoint === "prev" && id > 0) {
     activeIndexPhoto -= 1;
     allPhoto[activeIndexPhoto].classList.add("active");
     allPointButton[activeIndexPhoto].classList.add("activePoint");
   }
   if (buttonPrevOrNextOrPoint === "next" && id < allPhoto.length - 1) {
-    allPhoto[activeIndexPhoto].classList.remove("active");
-    allPointButton[activeIndexPhoto].classList.remove("activePoint");
     activeIndexPhoto += 1;
     allPhoto[activeIndexPhoto].classList.add("active");
     allPointButton[activeIndexPhoto].classList.add("activePoint");
   }
   if (buttonPrevOrNextOrPoint === "piont") {
-    allPhoto[activeIndexPhoto].classList.remove("active");
-    allPointButton[activeIndexPhoto].classList.remove("activePoint");
     activeIndexPhoto = id;
     allPhoto[id].classList.add("active");
     allPointButton[id].classList.add("activePoint");
   }
 };
 
-prevButton.addEventListener("click", (event) => {
-  console.log(this);
-  
-  
+prevButton.addEventListener("click", () => {
   changPhoto(activeIndexPhoto, "prev");
   hideButtons();
 });
