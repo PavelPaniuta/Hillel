@@ -22,18 +22,24 @@ body {
 }
 
 .slider__photo{
+    width: 100%;
     height: 100%;
     overflow: hidden;
     border-radius:25px;
+    display: flex;
 }
 
 .slider__img {
     display: none;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit:cover;
+    animation: ani 1s forwards;
 }
-
+@keyframes ani {
+    0% {opacity: 0}
+  100% {opacity: 100;}
+  }
 .active {
     display: block;
 }
@@ -44,6 +50,7 @@ body {
     left: -60px;
     transform:translate(0, -50%);
     cursor: pointer;
+    animation: ani 3s forwards;
 }
 
 .slider__next-button {   
@@ -52,6 +59,7 @@ body {
     right: -60px;
     transform:translate(0, -50%);
     cursor: pointer;
+    animation: ani 3s forwards;
 }
 
 .slider__navigatin-button {
@@ -70,8 +78,9 @@ body {
     padding: 5px;
     margin: 3px;
     cursor: pointer;
+    transition: background-color 0.5s ease;
 }
 
 .activePoint{
-    background-color: brown !important;
+    background-color: rgb(95, 9, 9) !important;
 }

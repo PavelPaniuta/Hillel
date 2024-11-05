@@ -6,7 +6,7 @@ const prevButton = document.querySelector(".slider__prev-button");
 const nextButton = document.querySelector(".slider__next-button");
 const divPointButton = document.querySelector(".slider__navigatin-button");
 
-let activeIndexPhoto = 1;
+let activeIndexPhoto = 0;
 
 const imagesAll = [
   { src: "./1.jpg", alt: "Photo1", title: "Текст слайдера 1" },
@@ -40,29 +40,27 @@ const allPointButton = [
 ];
 allPointButton[activeIndexPhoto].classList.add("activePoint");
 
-const noneButton = () => {
+const hideButtons = () => {
     prevButton.style.display = activeIndexPhoto <= 0 ? "none" : "block"; 
     nextButton.style.display = activeIndexPhoto >= allPhoto.length - 1 ? "none" : "block";
 };
 
-noneButton();
+hideButtons();
 
 const changPhoto = (id, buttonPrevOrNextOrPoint) => {
   if (buttonPrevOrNextOrPoint === "prev" && id > 0) {
-    allPhoto[id].classList.remove("active");
+    allPhoto[activeIndexPhoto].classList.remove("active");
     allPointButton[activeIndexPhoto].classList.remove("activePoint");
-    id = id - 1;
-    activeIndexPhoto = id;
-    allPhoto[id].classList.add("active");
-    allPointButton[id].classList.add("activePoint");
+    activeIndexPhoto -= 1;
+    allPhoto[activeIndexPhoto].classList.add("active");
+    allPointButton[activeIndexPhoto].classList.add("activePoint");
   }
   if (buttonPrevOrNextOrPoint === "next" && id < allPhoto.length - 1) {
-    allPhoto[id].classList.remove("active");
+    allPhoto[activeIndexPhoto].classList.remove("active");
     allPointButton[activeIndexPhoto].classList.remove("activePoint");
-    id = id + 1;
-    activeIndexPhoto = id;
-    allPhoto[id].classList.add("active");
-    allPointButton[id].classList.add("activePoint");
+    activeIndexPhoto += 1;
+    allPhoto[activeIndexPhoto].classList.add("active");
+    allPointButton[activeIndexPhoto].classList.add("activePoint");
   }
   if (buttonPrevOrNextOrPoint === "piont") {
     allPhoto[activeIndexPhoto].classList.remove("active");
@@ -74,43 +72,20 @@ const changPhoto = (id, buttonPrevOrNextOrPoint) => {
 };
 
 prevButton.addEventListener("click", (event) => {
+  console.log(this);
+  
+  
   changPhoto(activeIndexPhoto, "prev");
-  noneButton();
+  hideButtons();
 });
 
 nextButton.addEventListener("click", () => {
   changPhoto(activeIndexPhoto, "next");
-  noneButton();
+  hideButtons();
 });
 
 divPointButton.addEventListener("click", (event) => {
   let ids = allPointButton.indexOf(event.target);
   changPhoto(ids, "piont");
-  noneButton();
+  hideButtons();
 });
-
-
-//Анимация для текста слайдера 
-// function animateText(textArea) {
-//     let text = textArea.value;
-//     let to = text.length,
-//       from = 0;
-
-//     animate({
-//       duration: 5000,
-//       timing: bounce,
-//       draw: function(progress) {
-//         let result = (to - from) * progress + from;
-//         textArea.value = text.slice(0, Math.ceil(result))
-//       }
-//     });
-//   }
-
-
-//   function bounce(timeFraction) {
-//     for (let a = 0, b = 1; 1; a += b, b /= 2) {
-//       if (timeFraction >= (7 - 4 * a) / 11) {
-//         return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
-//       }
-//     }
-//   }
