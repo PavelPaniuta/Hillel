@@ -19,8 +19,8 @@ const addElement = (src, alt) => {
   const newPoint = document.createElement("div");
   newPoint.className = `slider__navigatin-button--point`;
   sliderPointButton.appendChild(newPoint);
-  newImg.src = `${src}`;
-  newImg.alt = `${alt}`;
+  newImg.src = src;
+  newImg.alt = alt;
   newImg.className = "slider__img";
   sliderPhoto.appendChild(newImg);
 };
@@ -41,16 +41,8 @@ const allPointButton = [
 allPointButton[activeIndexPhoto].classList.add("activePoint");
 
 const noneButton = () => {
-  if (activeIndexPhoto <= 0) {
-    prevButton.style.display = "none";
-  } else {
-    prevButton.style.display = "block";
-  }
-  if (activeIndexPhoto >= allPhoto.length - 1) {
-    nextButton.style.display = "none";
-  } else {
-    nextButton.style.display = "block";
-  }
+    prevButton.style.display = activeIndexPhoto <= 0 ? "none" : "block"; 
+    nextButton.style.display = activeIndexPhoto >= allPhoto.length - 1 ? "none" : "block";
 };
 
 noneButton();
@@ -92,12 +84,7 @@ nextButton.addEventListener("click", () => {
 });
 
 divPointButton.addEventListener("click", (event) => {
-  let ids = 0;
-  allPointButton.forEach((element, id) => {
-    if (event.target === element) {
-      ids = id;
-    }
-  });
+  let ids = allPointButton.indexOf(event.target);
   changPhoto(ids, "piont");
   noneButton();
 });
