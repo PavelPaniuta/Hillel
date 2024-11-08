@@ -72,3 +72,11 @@ h1, h2 {
     width: 95px;
     padding: 10px;
 }
+
+.info {
+    display: none;
+}
+
+.block {
+    display: block;
+}
