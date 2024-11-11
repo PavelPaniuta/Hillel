@@ -28,12 +28,11 @@ const addNewElement = (id, value, checked) => {
   ul.appendChild(newLiElement);
 };
 
-const parseLocalStorage = () => {
+const parseLocalStorage = () => {    
   if (localStorage.getItem("todo") === null) {
     return;
   }
   const locStorage = JSON.parse(localStorage.getItem("todo"));
-
   for (let key in locStorage) {
     let chek = locStorage[key].checked;
     mass[key] = locStorage[key];
