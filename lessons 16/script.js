@@ -20,7 +20,7 @@ function Student(firstName, lastName, birthYear) {
 
   this.getAverageGrade = () => {
     const total = this.grades.reduce((acc, next) => acc + next, 0);
-    return Math.round(this.grades.length ? total / this.grades.length : 0);
+    return this.grades.length ? total / this.grades.length : 0;
   };
 
   this.getAverageAttendance = function() {
