@@ -32,7 +32,7 @@ const feelsLike = document.querySelector(".wather-feelslike");
 const reset = document.querySelector(".refresh-button");
 const select = document.querySelector(".city");
 const loading = document.querySelector(".loading");
-let selectValue = "Kiev";
+let selectValue = "";
 
 async function watherGetData(citi) {
   citys.textContent = "--";
