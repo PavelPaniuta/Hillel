@@ -87,7 +87,7 @@ reset.addEventListener("click", () => {
 });
 
 select.addEventListener("change", function () {
-  if (selectValue === this.value) {
+  if (selectValue === this.value || this.value === "") {
     return;
   }
   selectValue = this.value;
