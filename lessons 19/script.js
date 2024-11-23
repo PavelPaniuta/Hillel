@@ -63,7 +63,9 @@ async function watherGetData(citi) {
 }
 
 data.textContent = `${monthNames[month]}, ${day}, ${year}`;
-time.textContent = `${hours}:${minutes}:${second}`;
+time.textContent = `${hours}:${minutes
+      .toString()
+      .padStart(2, "0")}:${second.toString().padStart(2, "0")}`;
 
 function Time() {
   setInterval(() => {
