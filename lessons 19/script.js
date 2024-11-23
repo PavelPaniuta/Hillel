@@ -79,7 +79,12 @@ function Time() {
 }
 Time();
 
-reset.addEventListener("click", () => watherGetData(selectValue));
+reset.addEventListener("click", () => {
+    if (selectValue == '') {
+        return;
+    }
+    watherGetData(selectValue);
+});
 
 select.addEventListener("change", function () {
   if (selectValue === this.value) {
