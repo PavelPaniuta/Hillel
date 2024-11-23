@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <section class="wather">
+        <div class="wather-wrapper">
+          <div class="wather-data">--</div>
+          <div class="wather-time">--</div>
+          <div class="info citys">
+            City: <span class="wather-citys bold"> -- </span>
+          </div>
+          <div class="info">
+            Humidity: <span class="wather-humidity bold"> -- </span> %
+          </div>
+          <div class="info">
+            Pressure: <span class="wather-pressure bold"> -- </span> hPa
+          </div>
+          <div class="info">
+            Pressure: <span class="wather-wind bold"> -- </span> km/h SSE
+          </div>
+          <div class="info">
+            <span class="wather-temperatur bold bold"> -- </span> ℃
+          </div>
+          <div class="info">
+            Feels Like: <span class="wather-feelslike bold"> -- </span> ℃
+          </div>
+          <div class="info loading">
+            <span class="loading"></span>
+          </div>
+          <div class="wather-reset__button">
+            <select class="city" name="city" required="required">
+              <option value="">Select City</option>
+              <option value="Kiev">Kiev</option>
+              <option value="Dnipro">Dnipro</option>
+              <option value="Lviv">Lviv</option>
+              <option value="London">London</option>
+              <option value="Paris">Paris</option>
+              <option value="Kharkiv">Kharkiv</option>
+            </select>
+
+            <button class="refresh-button"></button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
