@@ -68,3 +68,11 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.badge {
+  font-size: 20px;
+}
+
+#button-addon2 {
+  margin-left: 10px;
+}
