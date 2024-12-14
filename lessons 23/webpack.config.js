@@ -1,21 +1,21 @@
 const path = require('path');
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './main.js', // Входной файл
+  entry: './client/main.js', // Входной файл
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'), // Папка для сборки
+    clean: true,
   },
   mode: 'development', // Установите режим разработки
-  devServer: {
-    static: {
-      directory: path.join(__dirname, './'), // Папка для статики
-    },
-    port: 8080, // Порт сервера (по умолчанию 8080)
-    open: true, // Автоматически открывать браузер
-    hot: true, // Включить горячую перезагрузку
-  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './client/index.html', // Укажите путь к вашему исходному index.html
+      filename: 'index.html', // Имя выходного файла
+    }),
+  ],
   module: {
     rules: [
         {
