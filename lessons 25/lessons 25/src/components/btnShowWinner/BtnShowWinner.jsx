@@ -26,17 +26,19 @@ class BtnShowWinner extends Component {
       { maxItem: this.props.item[0], maxIndex: 0 }
     );
     return (
-      <>
-        <button
+      <div className="wrapper">
+
+        {maxItem.smile ? (<button
           style={{ backgroundColor: "green", color: "white" }}
           onClick={() => this.toggleVisibility()}
         >
           {this.state.isVisible
             ? "Закрити інформаційне вікно"
             : this.state.title}
-        </button>
+        </button>) : null}
+         
 
-        {this.state.isVisible ? (
+        {this.state.isVisible && (maxItem.smile > 0)? (
           <div>
             <h3>Результати голосування</h3>
             <p>Переможець:</p>
@@ -44,7 +46,7 @@ class BtnShowWinner extends Component {
             <p>Кількість голосів: {maxItem.smile}</p>
           </div>
         ) : null}
-      </>
+      </div>
     );
   }
 }

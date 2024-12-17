@@ -3,6 +3,7 @@ import { Component } from "react";
 import Header from "../header/Header";
 import Smile from "../smile/Smile";
 import BtnShowWinner from "../btnShowWinner/BtnShowWinner";
+import DeleteRes from "../deleteRes/DeleteRes";
 
 class App extends Component {
   constructor(props) {
@@ -28,6 +29,19 @@ class App extends Component {
     }));
   };
 
+  deleteAllInfo = () => {
+    this.setState(() => ({
+      items: [
+        { id: 1, smile: 0, content: "😀" },
+        { id: 2, smile: 0, content: "🥰" },
+        { id: 3, smile: 0, content: "😍" },
+        { id: 4, smile: 0, content: "💘" },
+        { id: 5, smile: 0, content: "😚" },
+        { id: 6, smile: 0, content: "😇" },
+      ],
+    }))
+  }
+
   componentDidMount() {
     if (localStorage.getItem("smile") == null) {
       localStorage.setItem("smile", JSON.stringify(this.state.items));
@@ -43,14 +57,15 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <div className="wrapper">
         <Header text={"Голосування за крутіщий смайл"} />
         <Smile
           item={this.state.items}
           handleSmileClick={this.handleSmileClick}
         />
         <BtnShowWinner item={this.state.items} />
-      </>
+        <DeleteRes deleteAllInfo={this.deleteAllInfo}/>
+      </div>
     );
   }
 }
