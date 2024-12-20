@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ShowWinnerBtn = (props) => {
+const ShowWinnerBtn = ({items}) => {
   const [visible, setVisible] = useState(false);
   const [title, setTitle] = useState("Відкрити переможця");
 
@@ -8,17 +8,17 @@ const ShowWinnerBtn = (props) => {
     setVisible((prevState) => !prevState);
   };
 
-  const { maxItem, maxIndex } = props.items.reduce(
+  const { maxItem, maxIndex } = items.reduce(
     (acc, item, index) => {
       if (item.smile > acc.maxItem.smile) {
         return { maxItem: item, maxIndex: index };
       }
       return acc;
     },
-    { maxItem: props.items[0], maxIndex: 0 }
+    { maxItem: items[0], maxIndex: 0 }
   );
 
-  if (!props.items || props.items.length === 0 || maxItem.smile === 0) {
+  if (!items || items.length === 0 || maxItem.smile === 0) {
     return <p>Поки що немає переможця.</p>;
   }
   return (
@@ -36,7 +36,7 @@ const ShowWinnerBtn = (props) => {
         <div>
           <h3>Результати голосування</h3>
           <p>Переможець:</p>
-          <h1>{props.items[maxIndex].content}</h1>
+          <h1>{items[maxIndex].content}</h1>
           <p>Кількість голосів: {maxItem.smile}</p>
         </div>
       ) : null}

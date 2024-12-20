@@ -1,10 +1,10 @@
 import React from "react";
 
-const DeleteRes = (props) => {   
+const DeleteRes = ({deleteAllInfo}) => {   
     return (
         <button
         style={{ backgroundColor: "red", color: "white", marginTop: "100px" }}
-        onClick={() => props.deleteAllInfo()}
+        onClick={() => deleteAllInfo()}
       >
        Оновити голосування
       </button>
