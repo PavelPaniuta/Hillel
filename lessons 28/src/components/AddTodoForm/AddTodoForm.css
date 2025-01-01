@@ -1,0 +1,22 @@
+.form__input {
+    border: 1px solid #ccc;
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  .input-error {
+    border-color: red;  
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 16px;
+    display: none; 
+  }
+  
+  .error-visible {
+    display: block; 
+  }
+
+  
+  
