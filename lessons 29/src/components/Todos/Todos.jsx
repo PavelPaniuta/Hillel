@@ -2,83 +2,48 @@ import React, { useState, useEffect } from "react";
 import AddTodoForm from "../AddTodoForm/AddTodoForm";
 import TodoItem from "../TodoItem/TodoItem";
 import "./Todos.scss";
+import {
+  fetchTodos,
+  addTodo,
+  deleteTodo,
+  toggleTodo,
+} from "../../redux/slices/todoSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Todos = () => {
-  const [todos, setTodos] = useState([]);
-  const [error, setError] = useState(null);
+  const dispatch = useDispatch();
+  const todos = useSelector((state) => state.todos.todos);
+  const loading = useSelector((state) => state.todos.loading);
+  const error = useSelector((state) => state.todos.error);
 
-  const fetchTodos = async () => {
-    try {
-      const response = await fetch("http://localhost:8080/todos");
-      const data = await response.json();
-      setTodos(data);
-    } catch (error) {
-      setError(error);
-    }
-  };
+  useEffect(() => {
+    dispatch(fetchTodos());
+  }, [dispatch]);
 
-  const addTodo = async (text) => {
+  const handleAddTodo = (text) => {
     const newTodo = {
       id: +new Date(),
       text,
       checked: false,
     };
-
-    try {
-      const response = await fetch("http://localhost:8080/todos", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newTodo),
-      });
-      const savedTodo = await response.json();
-      setTodos((prevTodos) => [...prevTodos, savedTodo]);
-    } catch (error) {
-      setError(error);
-    }
+    dispatch(addTodo(newTodo));
   };
 
-  const deleteTodo = async (_id) => {
-    try {
-      const response = await fetch(`http://localhost:8080/todos/${_id}`, {
-        method: "DELETE",
-      });
-      if (!response.ok)
-        throw new Error(`Failed to delete todo with id: ${_id}`);
-      setTodos((prevTodos) => prevTodos.filter((todo) => todo._id !== _id));
-    } catch (error) {
-      setError(error);
-    }
+  const handleDeleteTodo = (_id) => {
+    dispatch(deleteTodo(_id));
   };
 
-  const toggleTodo = async (_id, checked) => {
-    try {
-      await fetch(`http://localhost:8080/todos/${_id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ checked }),
-      });
-      setTodos((prevTodos) =>
-        prevTodos.map((todo) =>
-          todo._id === _id ? { ...todo, checked } : todo
-        )
-      );
-    } catch (error) {
-      setError(error);
-    }
+  const handleToggleTodo = (_id, checked) => {
+    dispatch(toggleTodo({ _id, checked }));
   };
 
-  useEffect(() => {
-    fetchTodos();
-  }, []);
-
-  if (error) {
-    throw error;
-  }
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
     <main>
       <h1>ToDoList</h1>
-      <AddTodoForm onAdd={addTodo} />
+      <AddTodoForm onAdd={handleAddTodo} />
       <ul className="js--todos-wrapper">
         {todos.map(({ _id, text, checked }) => (
           <TodoItem
@@ -86,11 +51,12 @@ const Todos = () => {
             _id={_id}
             text={text}
             checked={checked}
-            onDelete={deleteTodo}
-            onToggle={toggleTodo}
+            onDelete={handleDeleteTodo}
+            onToggle={handleToggleTodo}
           />
         ))}
       </ul>
+      
     </main>
   );
 };

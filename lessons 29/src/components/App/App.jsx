@@ -10,7 +10,6 @@ import "./main.css";
 import store from '../../redux/store'
 import { Provider } from 'react-redux'
 
-
 const App = () => {
   const [theme, setTheme] = useState("");
 
