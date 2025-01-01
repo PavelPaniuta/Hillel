@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Todos from "./components/Todos/Todos";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import About from "./components/About/About";
-import Contact from "./components/Contact/Contact";
-import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
+import Todos from "../Todos/Todos";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import About from "../About/About";
+import Contact from "../Contact/Contact";
+import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 import "./main.css";
 
 const App = () => {
