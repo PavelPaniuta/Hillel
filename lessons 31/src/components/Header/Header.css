@@ -1,0 +1,32 @@
+.activete {
+  font-weight: bold;
+  color: yellow;
+}
+
+header {
+  height: 70px;
+  background-color: violet;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header nav {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+}
+
+header nav ul li {
+  margin-left: 20px;
+}
+
+div .custom-container button {
+  background-color: #007bff00 !important;
+}
