@@ -6,8 +6,8 @@ const TodoItem = ({ _id, text, checked, onDelete, onToggle, onEdit }) => {
 
   const handleSave = () => {
     if (newText.trim()) {
-        onEdit(_id, newText); // Передаем ID и новый текст
-        setIsEditing(false); // Выходим из режима редактирования
+        onEdit(_id, newText); 
+        setIsEditing(false); 
     }
 };
 

@@ -65,7 +65,7 @@ const Todos = () => {
             checked={checked}
             onDelete={handleDeleteTodo}
             onToggle={handleToggleTodo}
-            onEdit={handleEditTodo} // Новый пропс для редактирования
+            onEdit={handleEditTodo} 
           />
         ))}
       </ul>

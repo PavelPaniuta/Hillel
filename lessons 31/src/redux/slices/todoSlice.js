@@ -55,7 +55,7 @@ const todosSlice = createSlice({
       const updatedTodo = action.payload;
       const index = state.todos.findIndex((todo) => todo._id === updatedTodo._id);
       if (index !== -1) {
-          state.todos[index] = updatedTodo; // Обновляем задачу
+          state.todos[index] = updatedTodo; 
       }
   },
     toggleTodoFailure: (state, action) => {
@@ -72,7 +72,7 @@ const todosSlice = createSlice({
       const updatedTodo = action.payload;
       const index = state.todos.findIndex((todo) => todo._id === updatedTodo._id);
       if (index !== -1) {
-          state.todos[index] = updatedTodo; // Заменяем отредактированную задачу
+          state.todos[index] = updatedTodo; 
       }
   },
     editTodoFailure: (state, action) => {
